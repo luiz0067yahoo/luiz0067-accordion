@@ -1,6 +1,6 @@
 === luiz0067 Bootstrap Accordion ===
 Contributors: luiz0067yahoo
-Donate link: https://github.com/luiz0067yahoo/luiz0067-acordion
+Donate link: https://github.com/luiz0067yahoo/luiz0067-accordion
 Tags: accordion, bootstrap, faq, collapsible, gutenberg, block
 Requires at least: 6.0
 Tested up to: 6.6

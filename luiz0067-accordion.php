@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       luiz0067 Bootstrap Accordion
- * Plugin URI:        https://github.com/luiz0067yahoo/luiz0067-acordion
+ * Plugin URI:        https://github.com/luiz0067yahoo/luiz0067-accordion
  * Description:       WordPress Gutenberg Block for responsive Bootstrap 5 Accordions, FAQs and collapsible panels, compatible with any theme.
  * Version:           1.0.0
  * Requires at least: 6.0

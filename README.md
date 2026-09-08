@@ -42,7 +42,7 @@ Plugin WordPress moderno e intuitivo que adiciona um bloco nativo do **Gutenberg
 ## 📂 Estrutura do Projeto
 
 ```
-luiz0067-acordion/
+luiz0067-accordion/
 ├── assets/
 │   ├── bootstrap/
 │   │   ├── css/bootstrap.min.css       # Bootstrap 5.3 CSS
@@ -77,7 +77,7 @@ luiz0067-acordion/
 4. Ative o plugin.
 
 ### Opção 2: Via FTP / Diretório de Plugins
-1. Copie a pasta `luiz0067-acordion` para o diretório `/wp-content/plugins/` da sua instalação WordPress.
+1. Copie a pasta `luiz0067-accordion` para o diretório `/wp-content/plugins/` da sua instalação WordPress.
 2. Acesse o painel administrativo em **Plugins**.
 3. Localize **luiz0067 Bootstrap Accordion** e clique em **Ativar**.
 
