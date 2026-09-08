@@ -1,0 +1,155 @@
+/* ==========================================================================
+   luiz0067 Bootstrap Accordion - Styles (Frontend & Gutenberg Canvas)
+   ========================================================================== */
+
+.luiz0067-accordion-wrapper {
+	width: 100%;
+	margin: 1.5rem 0;
+	position: relative;
+	font-family: inherit;
+}
+
+/* Accordion Base Enhancements */
+.luiz0067-accordion-wrapper .accordion {
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.luiz0067-accordion-wrapper .accordion-item {
+	border: 1px solid rgba(0, 0, 0, 0.125);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.luiz0067-accordion-wrapper .accordion-item:not(:first-of-type) {
+	border-top: 0;
+}
+
+.luiz0067-accordion-wrapper .accordion-item:first-of-type {
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+}
+
+.luiz0067-accordion-wrapper .accordion-item:last-of-type {
+	border-bottom-left-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+}
+
+/* Accordion Button */
+.luiz0067-accordion-wrapper .accordion-button {
+	font-size: 1.05rem;
+	font-weight: 600;
+	padding: 1.1rem 1.25rem;
+	transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+	outline: none;
+}
+
+.luiz0067-accordion-wrapper .accordion-button:not(.collapsed) {
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.luiz0067-accordion-wrapper .accordion-button:focus {
+	border-color: rgba(13, 110, 253, 0.5);
+	box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Accordion Body */
+.luiz0067-accordion-wrapper .accordion-body {
+	padding: 1.25rem 1.5rem;
+	line-height: 1.65;
+	font-size: 0.98rem;
+	color: #333333;
+}
+
+.luiz0067-accordion-wrapper .accordion-body p:last-child {
+	margin-bottom: 0;
+}
+
+/* Flush Accordion Modifier */
+.luiz0067-accordion-wrapper .accordion-flush {
+	border-radius: 0;
+}
+
+.luiz0067-accordion-wrapper .accordion-flush .accordion-item {
+	border-right: 0;
+	border-left: 0;
+	border-radius: 0;
+}
+
+.luiz0067-accordion-wrapper .accordion-flush .accordion-item:first-child {
+	border-top: 0;
+}
+
+.luiz0067-accordion-wrapper .accordion-flush .accordion-item:last-child {
+	border-bottom: 0;
+}
+
+/* Custom Colors Support via CSS Variables */
+.luiz0067-accordion-wrapper.has-custom-colors .accordion-button:not(.collapsed) {
+	background-color: var(--bs-accordion-active-bg, #e7f1ff);
+	color: var(--bs-accordion-active-color, #0c63e4);
+}
+
+/* ==========================================================================
+   Gutenberg Editor Specific Controls & Fidelity
+   ========================================================================== */
+
+.luiz0067-accordion-editor-container {
+	width: 100%;
+	padding: 8px 0;
+}
+
+.luiz0067-accordion-editor-container .accordion-button {
+	cursor: default !important;
+}
+
+.luiz0067-accordion-editor-container .accordion-button [contenteditable="true"] {
+	cursor: text !important;
+}
+
+.luiz0067-accordion-editor-container .accordion-item-actions {
+	opacity: 0.85;
+	transition: opacity 0.2s ease;
+}
+
+.luiz0067-accordion-editor-container .accordion-item:hover .accordion-item-actions {
+	opacity: 1;
+}
+
+.luiz0067-accordion-editor-container .accordion-item-actions .components-button {
+	height: 28px !important;
+	min-width: 28px !important;
+	padding: 0 4px !important;
+	border-radius: 4px;
+}
+
+.luiz0067-accordion-editor-container .accordion-item-actions .components-button:hover {
+	background-color: rgba(0, 0, 0, 0.08);
+}
+
+.luiz0067-accordion-editor-container .accordion-collapse.show {
+	border-top: 1px solid rgba(0, 0, 0, 0.08);
+	animation: luiz0067FadeIn 0.2s ease-in-out;
+}
+
+.luiz0067-accordion-add-bar .components-button {
+	background: #0d6efd;
+	color: #ffffff;
+	font-weight: 600;
+	transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.luiz0067-accordion-add-bar .components-button:hover {
+	background: #0b5ed7;
+	transform: translateY(-1px);
+}
+
+@keyframes luiz0067FadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
