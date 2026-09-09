@@ -1,4 +1,4 @@
-=== luiz0067 Bootstrap Accordion ===
+=== luiz0067 Accordion ===
 Contributors: luiz0067yahoo
 Donate link: https://github.com/luiz0067yahoo/luiz0067-accordion
 Tags: accordion, menu, bootstrap, collapsible, gutenberg
@@ -13,7 +13,7 @@ WordPress Gutenberg blocks for creating responsive Bootstrap 5 Retractable Menus
 
 == Description ==
 
-**luiz0067 Bootstrap Accordion** is a modern and intuitive WordPress plugin that adds native Gutenberg blocks for creating and managing responsive collapsible menus (1 column, 2 columns, and 3 columns) using Bootstrap 5.3.
+**luiz0067 Accordion** is a modern and intuitive WordPress plugin that adds native Gutenberg blocks for creating and managing responsive collapsible menus (1 column, 2 columns, and 3 columns) using Bootstrap 5.3.
 
 ### Features
 * **Three Dedicated Menu Types**:
@@ -34,6 +34,11 @@ WordPress Gutenberg blocks for creating responsive Bootstrap 5 Retractable Menus
 3. Open any Page or Post in the block editor (Gutenberg).
 4. Search for **"Menu Retrátil"** in the block inserter.
 5. Add items, customize titles and contents, then publish!
+
+== Screenshots ==
+
+1. Gutenberg block editor view: visual editing of Retractable Menu blocks with live preview, topic titles, and inline actions.
+2. Responsive frontend view: modern Bootstrap 5 collapsible columns with clean typography and smooth transitions.
 
 == Frequently Asked Questions ==
 

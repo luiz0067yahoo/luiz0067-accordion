@@ -1,4 +1,4 @@
-# luiz0067 Bootstrap Accordion 📑
+# luiz0067 Accordion 📑
 
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg?logo=wordpress)](https://wordpress.org)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952b3.svg?logo=bootstrap)](https://getbootstrap.com)
@@ -6,6 +6,14 @@
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 Plugin WordPress moderno e intuitivo que adiciona blocos nativos do **Gutenberg** para criação e gerenciamento de menus retráteis responsivos (**Menu Retrátil**, **Menu Retrátil Duplo** e **Menu Retrátil Triplo**) com **Bootstrap 5.3** e ícones **Font Awesome 6**.
+
+---
+
+## 📸 Screenshots
+
+| Editor Gutenberg (Edição Visual) | Frontend Responsivo (Bootstrap 5) |
+| :---: | :---: |
+| ![Gutenberg Editor](assets/screenshot-1.png) | ![Frontend Preview](assets/screenshot-2.png) |
 
 ---
 
