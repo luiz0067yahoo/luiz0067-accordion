@@ -129,9 +129,13 @@ function luiz0067_accordion_filter_allowed_blocks( $allowed_block_types, $contex
 		$allowed_block_types = array_keys( $registered_blocks );
 	}
 
-	// Lista de blocos para remover do Gutenberg (Sanfona e Apresentação)
+	// Remove toda a suíte de blocos nativos Accordion/Sanfona do WordPress
 	$blocks_to_remove = array(
-		'core/details'           // Bloco nativo 'Sanfona' do WordPress
+		'core/accordion',          // Accordion (Sanfona)
+		'core/accordion-heading',  // Accordion Heading
+		'core/accordion-item',     // Accordion Item
+		'core/accordion-panel',    // Accordion Panel
+		'core/details',            // Details (Sanfona)
 	);
 
 	if ( is_array( $allowed_block_types ) ) {
@@ -142,4 +146,50 @@ function luiz0067_accordion_filter_allowed_blocks( $allowed_block_types, $contex
 }
 add_filter( 'allowed_block_types_all', 'luiz0067_accordion_filter_allowed_blocks', 10, 2 );
 add_filter( 'allowed_block_types', 'luiz0067_accordion_filter_allowed_blocks', 10, 2 );
+
+/**
+ * Desregistra o bloco 'Sanfona' e toda a família core/accordion diretamente no JavaScript do Gutenberg
+ */
+function luiz0067_accordion_unregister_sanfona_js() {
+	$inline_js = "(function() {
+		function removeCoreAccordion() {
+			if (!window.wp || !window.wp.blocks || !window.wp.blocks.unregisterBlockType) return;
+			var coreAccordionBlocks = [
+				'core/accordion',
+				'core/accordion-heading',
+				'core/accordion-item',
+				'core/accordion-panel',
+				'core/details'
+			];
+			coreAccordionBlocks.forEach(function(slug) {
+				if (wp.blocks.getBlockType(slug)) {
+					wp.blocks.unregisterBlockType(slug);
+				}
+			});
+			if (wp.blocks.getBlockTypes) {
+				wp.blocks.getBlockTypes().forEach(function(b) {
+					if (b && b.name && b.name.indexOf('luiz0067/') !== 0) {
+						var t = (b.title || '').toLowerCase();
+						if (t.indexOf('sanfona') !== -1 || (b.name.indexOf('core/accordion') === 0) || b.name === 'core/details') {
+							wp.blocks.unregisterBlockType(b.name);
+						}
+					}
+				});
+			}
+		}
+		if (window.wp && window.wp.domReady) {
+			wp.domReady(function() {
+				removeCoreAccordion();
+				setTimeout(removeCoreAccordion, 200);
+				setTimeout(removeCoreAccordion, 600);
+				setTimeout(removeCoreAccordion, 1500);
+			});
+		}
+	})();";
+
+	wp_add_inline_script( 'wp-blocks', $inline_js );
+	wp_add_inline_script( 'luiz0067-accordion-single-editor', $inline_js );
+}
+add_action( 'enqueue_block_editor_assets', 'luiz0067_accordion_unregister_sanfona_js', 99 );
+
 

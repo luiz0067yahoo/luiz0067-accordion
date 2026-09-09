@@ -381,4 +381,42 @@
 	// Register single column block
 	wp.blocks.registerBlockType('luiz0067/accordion', blockConfigSingle);
 
+	// Remove native WordPress core/accordion suite and core/details (Sanfona)
+	function unregisterCoreAccordion() {
+		if (!window.wp || !window.wp.blocks || !window.wp.blocks.unregisterBlockType) {
+			return;
+		}
+		var coreBlocksToRemove = [
+			'core/accordion',
+			'core/accordion-heading',
+			'core/accordion-item',
+			'core/accordion-panel',
+			'core/details'
+		];
+		coreBlocksToRemove.forEach(function(slug) {
+			if (wp.blocks.getBlockType(slug)) {
+				wp.blocks.unregisterBlockType(slug);
+			}
+		});
+		if (wp.blocks.getBlockTypes) {
+			wp.blocks.getBlockTypes().forEach(function(b) {
+				if (b && b.name && b.name.indexOf('luiz0067/') !== 0) {
+					var title = (b.title || '').toLowerCase();
+					if (title.indexOf('sanfona') !== -1 || (b.name.indexOf('core/accordion') === 0) || b.name === 'core/details') {
+						wp.blocks.unregisterBlockType(b.name);
+					}
+				}
+			});
+		}
+	}
+
+	if (window.wp && window.wp.domReady) {
+		window.wp.domReady(function() {
+			unregisterCoreAccordion();
+			setTimeout(unregisterCoreAccordion, 200);
+			setTimeout(unregisterCoreAccordion, 600);
+			setTimeout(unregisterCoreAccordion, 1500);
+		});
+	}
+
 })(window.wp, window.jQuery);
