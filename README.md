@@ -5,7 +5,7 @@
 [![Font Awesome](https://img.shields.io/badge/Font_Awesome-6.5.2-528DD7.svg?logo=fontawesome)](https://fontawesome.com)
 [![License: GPL v2+](https://img.shields.io/badge/License-GPL%20v2%2B-green.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
-Plugin WordPress moderno e intuitivo que adiciona um bloco nativo do **Gutenberg** para criação e gerenciamento de acordeões e seções recolhíveis responsivas (FAQ, sanfonas) com **Bootstrap 5.3** e ícones **Font Awesome 6**.
+Plugin WordPress moderno e intuitivo que adiciona blocos nativos do **Gutenberg** para criação e gerenciamento de menus retráteis responsivos (**Menu Retrátil**, **Menu Retrátil Duplo** e **Menu Retrátil Triplo**) com **Bootstrap 5.3** e ícones **Font Awesome 6**.
 
 ---
 

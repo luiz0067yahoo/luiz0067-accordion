@@ -153,3 +153,142 @@
 		transform: translateY(0);
 	}
 }
+
+/* ==========================================================================
+   Menu Retrátil (single, double & triple) Styles
+   ========================================================================== */
+
+.menu-accordion-block,
+.menu-accordion-single-block,
+.menu-accordion-double-block,
+.menu-accordion-triple-block {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.menu-accordion-block .accordion-item,
+.menu-accordion-single-block .accordion-item,
+.menu-accordion-double-block .accordion-item,
+.menu-accordion-triple-block .accordion-item {
+	position: relative;
+	margin-bottom: 0.5rem;
+	border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.menu-accordion-block .bg-3,
+.menu-accordion-single-block .bg-3,
+.menu-accordion-double-block .bg-3,
+.menu-accordion-triple-block .bg-3 {
+	background-color: #f8f9fa;
+}
+
+.menu-accordion-block .color-1,
+.menu-accordion-single-block .color-1,
+.menu-accordion-double-block .color-1,
+.menu-accordion-triple-block .color-1 {
+	color: #212529;
+}
+
+.menu-accordion-block .bg-0,
+.menu-accordion-single-block .bg-0,
+.menu-accordion-double-block .bg-0,
+.menu-accordion-triple-block .bg-0 {
+	background-color: #ffffff;
+}
+
+.menu-accordion-block .accordion-header,
+.menu-accordion-single-block .accordion-header,
+.menu-accordion-double-block .accordion-header,
+.menu-accordion-triple-block .accordion-header {
+	margin: 0;
+	padding: 0;
+}
+
+.menu-accordion-block .accordion-button,
+.menu-accordion-single-block .accordion-button,
+.menu-accordion-double-block .accordion-button,
+.menu-accordion-triple-block .accordion-button {
+	position: relative;
+	width: 100%;
+	font-weight: 600;
+	padding: 1rem 1.25rem;
+	text-align: left;
+	border: 0;
+}
+
+.menu-accordion-block .accordion-button input[type="text"],
+.menu-accordion-single-block .accordion-button input[type="text"],
+.menu-accordion-double-block .accordion-button input[type="text"],
+.menu-accordion-triple-block .accordion-button input[type="text"] {
+	border: none;
+	background: transparent;
+	font-weight: 600;
+	outline: none;
+	padding: 2px 4px;
+	box-shadow: none;
+}
+
+.menu-accordion-block .accordion-button input[type="text"]:focus,
+.menu-accordion-single-block .accordion-button input[type="text"]:focus,
+.menu-accordion-double-block .accordion-button input[type="text"]:focus,
+.menu-accordion-triple-block .accordion-button input[type="text"]:focus {
+	outline: 1px dashed rgba(0, 0, 0, 0.3);
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.menu-accordion-block .accordion-body,
+.menu-accordion-single-block .accordion-body,
+.menu-accordion-double-block .accordion-body,
+.menu-accordion-triple-block .accordion-body {
+	padding: 1rem 1.25rem;
+	line-height: 1.6;
+}
+
+.menu-accordion-block .accordion-action-buttons,
+.menu-accordion-single-block .accordion-action-buttons,
+.menu-accordion-double-block .accordion-action-buttons,
+.menu-accordion-triple-block .accordion-action-buttons {
+	opacity: 0.85;
+	transition: opacity 0.2s ease;
+}
+
+.menu-accordion-block .accordion-item:hover .accordion-action-buttons,
+.menu-accordion-single-block .accordion-item:hover .accordion-action-buttons,
+.menu-accordion-double-block .accordion-item:hover .accordion-action-buttons,
+.menu-accordion-triple-block .accordion-item:hover .accordion-action-buttons {
+	opacity: 1;
+}
+
+.menu-accordion-block .accordion-action-buttons input[type="button"],
+.menu-accordion-single-block .accordion-action-buttons input[type="button"],
+.menu-accordion-double-block .accordion-action-buttons input[type="button"],
+.menu-accordion-triple-block .accordion-action-buttons input[type="button"] {
+	font-family: monospace;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.menu-accordion-block .accordion-action-buttons input[type="button"]:hover,
+.menu-accordion-single-block .accordion-action-buttons input[type="button"]:hover,
+.menu-accordion-double-block .accordion-action-buttons input[type="button"]:hover,
+.menu-accordion-triple-block .accordion-action-buttons input[type="button"]:hover {
+	transform: scale(1.1);
+	background-color: #333333 !important;
+}
+
+@media (max-width: 767.98px) {
+	.menu-accordion-block .w-50,
+	.menu-accordion-double-block .w-50,
+	.menu-accordion-triple-block .col-md-4 {
+		width: 100% !important;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-bottom: 1rem;
+	}
+}
+
