@@ -229,6 +229,19 @@
 	padding: 0.5rem 0.75rem;
 }
 
+/* Remove qualquer ::after ou ::before adicionado no h2 do header */
+h2.accordion-header::after,
+h2.accordion-header::before,
+h2.accordion-header.accordion::after,
+h2.accordion-header.accordion::before,
+h2.accordion-header.accordion.text-uppercase::after,
+h2.accordion-header.accordion.text-uppercase::before,
+.accordion-header::after,
+.accordion-header::before {
+	display: none !important;
+	content: none !important;
+}
+
 .menu-accordion-block .accordion-button,
 .menu-accordion-single-block .accordion-button,
 .menu-accordion-double-block .accordion-button,
