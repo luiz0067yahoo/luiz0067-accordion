@@ -34,6 +34,12 @@
 	border-bottom-right-radius: 0.5rem;
 }
 
+/* Accordion Header */
+.luiz0067-accordion-wrapper .accordion-header {
+	margin: 0;
+	padding: 0.5rem 0.75rem;
+}
+
 /* Accordion Button */
 .luiz0067-accordion-wrapper .accordion-button {
 	font-size: 1.05rem;
@@ -43,10 +49,23 @@
 	outline: none;
 }
 
-/* Remove o ícone ::after do botão do accordion */
+/* Ícone de clique customizado (chevron down minimalista) */
 .luiz0067-accordion-wrapper .accordion-button::after {
-	display: none !important;
-	content: none !important;
+	display: inline-block !important;
+	content: "" !important;
+	flex-shrink: 0;
+	width: 1.15rem;
+	height: 1.15rem;
+	margin-left: auto;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e") !important;
+	background-repeat: no-repeat !important;
+	background-size: 1.15rem !important;
+	background-position: center !important;
+	transition: transform 0.25s ease-in-out !important;
+}
+
+.luiz0067-accordion-wrapper .accordion-button:not(.collapsed)::after {
+	transform: rotate(-180deg) !important;
 }
 
 .luiz0067-accordion-wrapper .accordion-button:not(.collapsed) {
@@ -207,7 +226,7 @@
 .menu-accordion-double-block .accordion-header,
 .menu-accordion-triple-block .accordion-header {
 	margin: 0;
-	padding: 0;
+	padding: 0.5rem 0.75rem;
 }
 
 .menu-accordion-block .accordion-button,
@@ -215,20 +234,53 @@
 .menu-accordion-double-block .accordion-button,
 .menu-accordion-triple-block .accordion-button {
 	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	width: 100%;
 	font-weight: 600;
-	padding: 1rem 1.25rem;
+	padding: 0.75rem 1rem;
 	text-align: left;
 	border: 0;
+	border-radius: 4px;
 }
 
-/* Remove o ícone ::after (seta/chevron do Bootstrap) */
+/* Ícone de clique customizado (chevron down minimalista) */
 .menu-accordion-block .accordion-button::after,
 .menu-accordion-single-block .accordion-button::after,
 .menu-accordion-double-block .accordion-button::after,
 .menu-accordion-triple-block .accordion-button::after {
-	display: none !important;
-	content: none !important;
+	display: inline-block !important;
+	content: "" !important;
+	flex-shrink: 0;
+	width: 1.15rem;
+	height: 1.15rem;
+	margin-left: auto;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23212529' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e") !important;
+	background-repeat: no-repeat !important;
+	background-size: 1.15rem !important;
+	background-position: center !important;
+	transition: transform 0.25s ease-in-out !important;
+}
+
+/* Quando expandido (clicado), gira 180 graus apontando para cima */
+.menu-accordion-block .accordion-button:not(.collapsed)::after,
+.menu-accordion-single-block .accordion-button:not(.collapsed)::after,
+.menu-accordion-double-block .accordion-button:not(.collapsed)::after,
+.menu-accordion-triple-block .accordion-button:not(.collapsed)::after {
+	transform: rotate(-180deg) !important;
+}
+
+/* No editor do Gutenberg, afasta o chevron para não sobrepor os botões + e - */
+.block-editor-block-list__layout .menu-accordion-block .accordion-button::after,
+.block-editor-block-list__layout .menu-accordion-single-block .accordion-button::after,
+.block-editor-block-list__layout .menu-accordion-double-block .accordion-button::after,
+.block-editor-block-list__layout .menu-accordion-triple-block .accordion-button::after,
+.editor-styles-wrapper .menu-accordion-block .accordion-button::after,
+.editor-styles-wrapper .menu-accordion-single-block .accordion-button::after,
+.editor-styles-wrapper .menu-accordion-double-block .accordion-button::after,
+.editor-styles-wrapper .menu-accordion-triple-block .accordion-button::after {
+	margin-right: 64px !important;
 }
 
 .menu-accordion-block .accordion-button input[type="text"],
