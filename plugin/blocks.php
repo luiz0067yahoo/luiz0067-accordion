@@ -100,17 +100,46 @@ function luiz0067_accordion_register_block() {
 	) );
 
 	// Register double-column block (2 colunas)
-	$double_script = file_exists( $double_js ) ? 'luiz0067-accordion-double-editor' : 'luiz0067-accordion-block-editor';
+	$double_script = file_exists( $double_js ) ? 'luiz0067-accordion-double-editor' : 'luiz0067-accordion-single-editor';
 	register_block_type( 'luiz0067/accordion-double', array(
 		'editor_script' => $double_script,
 		'style'         => 'luiz0067-accordion-style',
 	) );
 
 	// Register triple-column block (3 colunas)
-	$triple_script = file_exists( $triple_js ) ? 'luiz0067-accordion-triple-editor' : 'luiz0067-accordion-block-editor';
+	$triple_script = file_exists( $triple_js ) ? 'luiz0067-accordion-triple-editor' : 'luiz0067-accordion-single-editor';
 	register_block_type( 'luiz0067/accordion-triple', array(
 		'editor_script' => $triple_script,
 		'style'         => 'luiz0067-accordion-style',
 	) );
 }
 add_action( 'init', 'luiz0067_accordion_register_block' );
+
+/**
+ * Remove o bloco nativo 'Sanfona' (core/details) e apresentação dos blocos permitidos no Gutenberg
+ *
+ * @param array|bool $allowed_block_types Lista de blocos permitidos ou true.
+ * @param WP_Block_Editor_Context|WP_Post|null $context Contexto do editor.
+ * @return array
+ */
+function luiz0067_accordion_filter_allowed_blocks( $allowed_block_types, $context = null ) {
+	// Se todos os blocos estiverem permitidos (true ou vazio), obtém os blocos registrados
+	if ( true === $allowed_block_types || empty( $allowed_block_types ) ) {
+		$registered_blocks   = WP_Block_Type_Registry::get_instance()->get_all_registered();
+		$allowed_block_types = array_keys( $registered_blocks );
+	}
+
+	// Lista de blocos para remover do Gutenberg (Sanfona e Apresentação)
+	$blocks_to_remove = array(
+		'core/details'           // Bloco nativo 'Sanfona' do WordPress
+	);
+
+	if ( is_array( $allowed_block_types ) ) {
+		$allowed_block_types = array_values( array_diff( $allowed_block_types, $blocks_to_remove ) );
+	}
+
+	return $allowed_block_types;
+}
+add_filter( 'allowed_block_types_all', 'luiz0067_accordion_filter_allowed_blocks', 10, 2 );
+add_filter( 'allowed_block_types', 'luiz0067_accordion_filter_allowed_blocks', 10, 2 );
+
