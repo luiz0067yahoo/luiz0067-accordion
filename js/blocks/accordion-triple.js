@@ -187,7 +187,17 @@
 											if (e.target.tagName !== 'INPUT') {
 												var collapseEl = document.getElementById(itemCollapseId);
 												if (collapseEl) {
-													collapseEl.classList.toggle("show");
+													var isShown = collapseEl.classList.toggle("show");
+													var btn = e.currentTarget;
+													if (btn) {
+														if (isShown) {
+															btn.classList.remove("collapsed");
+															btn.setAttribute("aria-expanded", "true");
+														} else {
+															btn.classList.add("collapsed");
+															btn.setAttribute("aria-expanded", "false");
+														}
+													}
 												}
 											}
 										}

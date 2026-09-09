@@ -62,10 +62,15 @@
 	background-size: 1.15rem !important;
 	background-position: center !important;
 	transition: transform 0.25s ease-in-out !important;
+	transform: rotate(0deg) !important;
+}
+
+.luiz0067-accordion-wrapper .accordion-button.collapsed::after {
+	transform: rotate(0deg) !important;
 }
 
 .luiz0067-accordion-wrapper .accordion-button:not(.collapsed)::after {
-	transform: rotate(-180deg) !important;
+	transform: rotate(180deg) !important;
 }
 
 .luiz0067-accordion-wrapper .accordion-button:not(.collapsed) {
@@ -274,14 +279,23 @@ h2.accordion-header.accordion.text-uppercase::before,
 	background-size: 1.15rem !important;
 	background-position: center !important;
 	transition: transform 0.25s ease-in-out !important;
+	transform: rotate(0deg) !important;
 }
 
-/* Quando expandido (clicado), gira 180 graus apontando para cima */
+/* Estado fechado (padrão): chevron aponta para baixo (0 graus) */
+.menu-accordion-block .accordion-button.collapsed::after,
+.menu-accordion-single-block .accordion-button.collapsed::after,
+.menu-accordion-double-block .accordion-button.collapsed::after,
+.menu-accordion-triple-block .accordion-button.collapsed::after {
+	transform: rotate(0deg) !important;
+}
+
+/* Somente quando aberto/clicado (:not(.collapsed)): gira 180 graus (aponta para cima) */
 .menu-accordion-block .accordion-button:not(.collapsed)::after,
 .menu-accordion-single-block .accordion-button:not(.collapsed)::after,
 .menu-accordion-double-block .accordion-button:not(.collapsed)::after,
 .menu-accordion-triple-block .accordion-button:not(.collapsed)::after {
-	transform: rotate(-180deg) !important;
+	transform: rotate(180deg) !important;
 }
 
 /* No editor do Gutenberg, afasta o chevron para não sobrepor os botões + e - */
