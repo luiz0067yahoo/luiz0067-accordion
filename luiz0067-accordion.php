@@ -31,10 +31,16 @@ function luiz0067_accordion_enqueue_block_assets() {
 	wp_enqueue_style( 'luiz0067-accordion-fontawesome', plugin_dir_url( __FILE__ ) . 'assets/fontawesome/css/all.min.css', array(), '6.5.2' );
 	
 	// Custom Plugin Styles
-	wp_enqueue_style( 'luiz0067-accordion-style', plugin_dir_url( __FILE__ ) . 'style.css', array( 'luiz0067-accordion-bootstrap' ), '1.0.0' );
+	wp_enqueue_style( 'luiz0067-accordion-style', plugin_dir_url( __FILE__ ) . 'style.css', array( 'luiz0067-accordion-bootstrap' ), filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ) );
 
 	// Bootstrap 5 JS Bundle (includes Popper, local)
 	wp_enqueue_script( 'luiz0067-accordion-bootstrap-bundle', plugin_dir_url( __FILE__ ) . 'assets/bootstrap/js/bootstrap.bundle.min.js', array(), '5.3.8', true );
+
+	// Frontend helper script for robust click and chevron rotation handling
+	$frontend_js = plugin_dir_path( __FILE__ ) . 'js/frontend-accordion.js';
+	if ( file_exists( $frontend_js ) ) {
+		wp_enqueue_script( 'luiz0067-accordion-frontend', plugin_dir_url( __FILE__ ) . 'js/frontend-accordion.js', array( 'luiz0067-accordion-bootstrap-bundle' ), filemtime( $frontend_js ), true );
+	}
 }
 // Enqueue on frontend and inside Gutenberg canvas iframe
 add_action( 'enqueue_block_assets', 'luiz0067_accordion_enqueue_block_assets' );

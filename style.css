@@ -194,6 +194,7 @@
 .menu-accordion-triple-block {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+	font-family: inherit;
 }
 
 .menu-accordion-block .accordion-item,
@@ -201,52 +202,123 @@
 .menu-accordion-double-block .accordion-item,
 .menu-accordion-triple-block .accordion-item {
 	position: relative;
-	margin-bottom: 0.5rem;
-	border: 1px solid rgba(0, 0, 0, 0.125);
+	margin-bottom: 0.5rem !important;
+	border: 1px solid rgba(0, 0, 0, 0.125) !important;
+	border-radius: 4px !important;
+	background-color: #f8f9fa !important;
+	overflow: hidden;
 }
 
 .menu-accordion-block .bg-3,
 .menu-accordion-single-block .bg-3,
 .menu-accordion-double-block .bg-3,
 .menu-accordion-triple-block .bg-3 {
-	background-color: #f8f9fa;
+	background-color: #f8f9fa !important;
 }
 
 .menu-accordion-block .color-1,
 .menu-accordion-single-block .color-1,
 .menu-accordion-double-block .color-1,
 .menu-accordion-triple-block .color-1 {
-	color: #212529;
+	color: #212529 !important;
 }
 
 .menu-accordion-block .bg-0,
 .menu-accordion-single-block .bg-0,
 .menu-accordion-double-block .bg-0,
 .menu-accordion-triple-block .bg-0 {
-	background-color: #ffffff;
+	background-color: #ffffff !important;
 }
 
+/* Neutraliza estilos e interferências de temas (como bordas vermelhas, linhas, cores e ::before/::after) nos títulos h2 */
 .menu-accordion-block .accordion-header,
 .menu-accordion-single-block .accordion-header,
 .menu-accordion-double-block .accordion-header,
-.menu-accordion-triple-block .accordion-header {
-	margin: 0;
-	padding: 0.5rem 0.75rem;
+.menu-accordion-triple-block .accordion-header,
+.menu-accordion-block h2,
+.menu-accordion-single-block h2,
+.menu-accordion-double-block h2,
+.menu-accordion-triple-block h2,
+h2.accordion-header {
+	margin: 0 !important;
+	padding: 0.5rem 0.75rem !important;
+	border: none !important;
+	border-top: none !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	outline: none !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+	letter-spacing: normal !important;
+	color: inherit !important;
+	font-size: 1rem !important;
+	line-height: normal !important;
 }
 
-/* Remove qualquer ::after ou ::before adicionado no h2 do header */
+/* Remove completamente qualquer ::after ou ::before (efeito vermelho, barras decorativas, marcadores de temas) */
+.menu-accordion-block .accordion-header::before,
+.menu-accordion-block .accordion-header::after,
+.menu-accordion-block .accordion-header:before,
+.menu-accordion-block .accordion-header:after,
+.menu-accordion-block h2::before,
+.menu-accordion-block h2::after,
+.menu-accordion-block h2:before,
+.menu-accordion-block h2:after,
+.menu-accordion-single-block .accordion-header::before,
+.menu-accordion-single-block .accordion-header::after,
+.menu-accordion-single-block .accordion-header:before,
+.menu-accordion-single-block .accordion-header:after,
+.menu-accordion-single-block h2::before,
+.menu-accordion-single-block h2::after,
+.menu-accordion-single-block h2:before,
+.menu-accordion-single-block h2:after,
+.menu-accordion-double-block .accordion-header::before,
+.menu-accordion-double-block .accordion-header::after,
+.menu-accordion-double-block .accordion-header:before,
+.menu-accordion-double-block .accordion-header:after,
+.menu-accordion-double-block h2::before,
+.menu-accordion-double-block h2::after,
+.menu-accordion-double-block h2:before,
+.menu-accordion-double-block h2:after,
+.menu-accordion-triple-block .accordion-header::before,
+.menu-accordion-triple-block .accordion-header::after,
+.menu-accordion-triple-block .accordion-header:before,
+.menu-accordion-triple-block .accordion-header:after,
+.menu-accordion-triple-block h2::before,
+.menu-accordion-triple-block h2::after,
+.menu-accordion-triple-block h2:before,
+.menu-accordion-triple-block h2:after,
 h2.accordion-header::after,
 h2.accordion-header::before,
+h2.accordion-header:after,
+h2.accordion-header:before,
 h2.accordion-header.accordion::after,
 h2.accordion-header.accordion::before,
+h2.accordion-header.accordion:after,
+h2.accordion-header.accordion:before,
 h2.accordion-header.accordion.text-uppercase::after,
 h2.accordion-header.accordion.text-uppercase::before,
+h2.accordion-header.accordion.text-uppercase:after,
+h2.accordion-header.accordion.text-uppercase:before,
 .accordion-header::after,
-.accordion-header::before {
+.accordion-header::before,
+.accordion-header:after,
+.accordion-header:before {
 	display: none !important;
 	content: none !important;
+	border: none !important;
+	background: none !important;
+	width: 0 !important;
+	height: 0 !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
 }
 
+/* Accordion Button - Garante fidelidade ao editor e previne tons vermelhos em qualquer estado */
 .menu-accordion-block .accordion-button,
 .menu-accordion-single-block .accordion-button,
 .menu-accordion-double-block .accordion-button,
@@ -257,10 +329,71 @@ h2.accordion-header.accordion.text-uppercase::before,
 	justify-content: space-between;
 	width: 100%;
 	font-weight: 600;
+	font-size: 1.05rem;
 	padding: 0.75rem 1rem;
 	text-align: left;
-	border: 0;
+	border: 0 !important;
 	border-radius: 4px;
+	background-color: #f8f9fa !important;
+	color: #212529 !important;
+	box-shadow: none !important;
+	outline: none !important;
+	text-decoration: none !important;
+	text-transform: none !important;
+	cursor: pointer !important;
+}
+
+/* Hover sem efeito vermelho */
+.menu-accordion-block .accordion-button:hover,
+.menu-accordion-single-block .accordion-button:hover,
+.menu-accordion-double-block .accordion-button:hover,
+.menu-accordion-triple-block .accordion-button:hover {
+	background-color: #f1f3f5 !important;
+	color: #212529 !important;
+	box-shadow: none !important;
+	outline: none !important;
+	border: 0 !important;
+	text-decoration: none !important;
+}
+
+/* Foco sem anel vermelho do tema ou navegador */
+.menu-accordion-block .accordion-button:focus,
+.menu-accordion-block .accordion-button:focus-visible,
+.menu-accordion-single-block .accordion-button:focus,
+.menu-accordion-single-block .accordion-button:focus-visible,
+.menu-accordion-double-block .accordion-button:focus,
+.menu-accordion-double-block .accordion-button:focus-visible,
+.menu-accordion-triple-block .accordion-button:focus,
+.menu-accordion-triple-block .accordion-button:focus-visible {
+	outline: none !important;
+	box-shadow: none !important;
+	border: 0 !important;
+	border-color: transparent !important;
+	background-color: #f8f9fa !important;
+	color: #212529 !important;
+}
+
+/* Estado aberto (not collapsed) - fidelidade idêntica ao editor e sem tom avermelhado de Bootstrap/tema */
+.menu-accordion-block .accordion-button:not(.collapsed),
+.menu-accordion-single-block .accordion-button:not(.collapsed),
+.menu-accordion-double-block .accordion-button:not(.collapsed),
+.menu-accordion-triple-block .accordion-button:not(.collapsed) {
+	background-color: #f8f9fa !important;
+	color: #212529 !important;
+	box-shadow: none !important;
+	border: 0 !important;
+}
+
+/* Estado ativo (clique) */
+.menu-accordion-block .accordion-button:active,
+.menu-accordion-single-block .accordion-button:active,
+.menu-accordion-double-block .accordion-button:active,
+.menu-accordion-triple-block .accordion-button:active {
+	background-color: #f8f9fa !important;
+	color: #212529 !important;
+	outline: none !important;
+	box-shadow: none !important;
+	border: 0 !important;
 }
 
 /* Ícone de clique customizado (chevron down minimalista) */
@@ -282,19 +415,43 @@ h2.accordion-header.accordion.text-uppercase::before,
 	transform: rotate(0deg) !important;
 }
 
-/* Estado fechado (padrão): chevron aponta para baixo (0 graus) */
+/* Estado fechado (padrão, hover e foco): NUNCA gira no hover nem no foco, mantendo estritamente 0 graus */
 .menu-accordion-block .accordion-button.collapsed::after,
 .menu-accordion-single-block .accordion-button.collapsed::after,
 .menu-accordion-double-block .accordion-button.collapsed::after,
-.menu-accordion-triple-block .accordion-button.collapsed::after {
+.menu-accordion-triple-block .accordion-button.collapsed::after,
+.menu-accordion-block .accordion-button.collapsed:hover::after,
+.menu-accordion-single-block .accordion-button.collapsed:hover::after,
+.menu-accordion-double-block .accordion-button.collapsed:hover::after,
+.menu-accordion-triple-block .accordion-button.collapsed:hover::after,
+.menu-accordion-block .accordion-button.collapsed:focus::after,
+.menu-accordion-single-block .accordion-button.collapsed:focus::after,
+.menu-accordion-double-block .accordion-button.collapsed:focus::after,
+.menu-accordion-triple-block .accordion-button.collapsed:focus::after,
+.menu-accordion-block .accordion-button[aria-expanded="false"]::after,
+.menu-accordion-single-block .accordion-button[aria-expanded="false"]::after,
+.menu-accordion-double-block .accordion-button[aria-expanded="false"]::after,
+.menu-accordion-triple-block .accordion-button[aria-expanded="false"]::after,
+.menu-accordion-block .accordion-button[aria-expanded="false"]:hover::after,
+.menu-accordion-single-block .accordion-button[aria-expanded="false"]:hover::after,
+.menu-accordion-double-block .accordion-button[aria-expanded="false"]:hover::after,
+.menu-accordion-triple-block .accordion-button[aria-expanded="false"]:hover::after,
+.menu-accordion-block .accordion-button[aria-expanded="false"]:focus::after,
+.menu-accordion-single-block .accordion-button[aria-expanded="false"]:focus::after,
+.menu-accordion-double-block .accordion-button[aria-expanded="false"]:focus::after,
+.menu-accordion-triple-block .accordion-button[aria-expanded="false"]:focus::after {
 	transform: rotate(0deg) !important;
 }
 
-/* Somente quando aberto/clicado (:not(.collapsed)): gira 180 graus (aponta para cima) */
+/* Somente e unicamente quando o item for clicado e aberto: gira 180 graus (aponta para cima) */
 .menu-accordion-block .accordion-button:not(.collapsed)::after,
 .menu-accordion-single-block .accordion-button:not(.collapsed)::after,
 .menu-accordion-double-block .accordion-button:not(.collapsed)::after,
-.menu-accordion-triple-block .accordion-button:not(.collapsed)::after {
+.menu-accordion-triple-block .accordion-button:not(.collapsed)::after,
+.menu-accordion-block .accordion-button[aria-expanded="true"]::after,
+.menu-accordion-single-block .accordion-button[aria-expanded="true"]::after,
+.menu-accordion-double-block .accordion-button[aria-expanded="true"]::after,
+.menu-accordion-triple-block .accordion-button[aria-expanded="true"]::after {
 	transform: rotate(180deg) !important;
 }
 
@@ -317,6 +474,7 @@ h2.accordion-header.accordion.text-uppercase::before,
 	border: none;
 	background: transparent;
 	font-weight: 600;
+	font-size: 1.05rem;
 	outline: none;
 	padding: 2px 4px;
 	box-shadow: none;
@@ -330,12 +488,51 @@ h2.accordion-header.accordion.text-uppercase::before,
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
+.menu-accordion-block .accordion-collapse,
+.menu-accordion-single-block .accordion-collapse,
+.menu-accordion-double-block .accordion-collapse,
+.menu-accordion-triple-block .accordion-collapse {
+	border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.menu-accordion-block .accordion-collapse.show,
+.menu-accordion-single-block .accordion-collapse.show,
+.menu-accordion-double-block .accordion-collapse.show,
+.menu-accordion-triple-block .accordion-collapse.show {
+	display: block !important;
+	animation: luiz0067FadeIn 0.2s ease-in-out;
+}
+
+.menu-accordion-block .accordion-collapse:not(.show),
+.menu-accordion-single-block .accordion-collapse:not(.show),
+.menu-accordion-double-block .accordion-collapse:not(.show),
+.menu-accordion-triple-block .accordion-collapse:not(.show) {
+	display: none !important;
+}
+
 .menu-accordion-block .accordion-body,
 .menu-accordion-single-block .accordion-body,
 .menu-accordion-double-block .accordion-body,
 .menu-accordion-triple-block .accordion-body {
 	padding: 1rem 1.25rem;
 	line-height: 1.6;
+	background-color: #ffffff !important;
+	color: #212529 !important;
+}
+
+.menu-accordion-block .accordion-body p,
+.menu-accordion-single-block .accordion-body p,
+.menu-accordion-double-block .accordion-body p,
+.menu-accordion-triple-block .accordion-body p {
+	color: inherit;
+	margin-bottom: 0.75rem;
+}
+
+.menu-accordion-block .accordion-body p:last-child,
+.menu-accordion-single-block .accordion-body p:last-child,
+.menu-accordion-double-block .accordion-body p:last-child,
+.menu-accordion-triple-block .accordion-body p:last-child {
+	margin-bottom: 0;
 }
 
 .menu-accordion-block .accordion-action-buttons,

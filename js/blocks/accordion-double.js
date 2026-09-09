@@ -181,13 +181,33 @@
 											if (e.target.tagName !== 'INPUT') {
 												var collapseEl = document.getElementById(itemCollapseId);
 												if (collapseEl) {
-													var isShown = collapseEl.classList.toggle("show");
 													var btn = e.currentTarget;
-													if (btn) {
-														if (isShown) {
+													var willShow = !collapseEl.classList.contains("show");
+													var accordionParent = collapseEl.closest('.accordion');
+
+													if (willShow && accordionParent) {
+														var otherCollapses = accordionParent.querySelectorAll('.accordion-collapse');
+														otherCollapses.forEach(function(oc) {
+															if (oc !== collapseEl) oc.classList.remove("show");
+														});
+														var otherBtns = accordionParent.querySelectorAll('.accordion-button');
+														otherBtns.forEach(function(ob) {
+															if (ob !== btn) {
+																ob.classList.add("collapsed");
+																ob.setAttribute("aria-expanded", "false");
+															}
+														});
+													}
+
+													if (willShow) {
+														collapseEl.classList.add("show");
+														if (btn) {
 															btn.classList.remove("collapsed");
 															btn.setAttribute("aria-expanded", "true");
-														} else {
+														}
+													} else {
+														collapseEl.classList.remove("show");
+														if (btn) {
 															btn.classList.add("collapsed");
 															btn.setAttribute("aria-expanded", "false");
 														}
@@ -298,8 +318,8 @@
 					var itemCollapseId = "collapse_" + timenumber + "_" + index_col + "_" + index;
 
 					lines_save.push(
-						el('div', { className: "accordion-item accordion-flush bg-3", key: "save_item_" + index_col + "_" + index },
-							el('h2', { className: "accordion-header accordion text-uppercase" },
+						el('div', { className: "accordion-item accordion-flush bg-3 position-relative mb-2", key: "save_item_" + index_col + "_" + index },
+							el('h2', { className: "accordion-header accordion" },
 								el('button', {
 									type: "button",
 									className: "accordion-button collapsed bg-3 color-1",
