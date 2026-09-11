@@ -39,7 +39,7 @@ Plugin WordPress moderno e intuitivo que adiciona blocos nativos do **Gutenberg*
 - **Personalização de Cores**:
   - Ajuste personalizado da cor de fundo e texto do cabeçalho ativo na barra lateral do editor.
 - **Internacionalização Pronta (i18n)**:
-  - Totalmente traduzido em **Português do Brasil (pt-BR)**, **Inglês (en)** e **Espanhol (es)**.
+  - Totalmente traduzido em **Português do Brasil (pt-BR)**, **Inglês (en)**, **Espanhol (es)** e **Italiano (it)**.
   - Menu de configurações no WordPress (`Configurações > luiz0067 Accordion`) para fixar o idioma ou detectar automaticamente.
 - **Compatibilidade Global**:
   - Compatível com **Block Themes** (Full Site Editing - FSE) e **Classic Themes**.
@@ -64,7 +64,8 @@ luiz0067-accordion/
 ├── languages/
 │   ├── pt-br.json                      # Tradução em Português
 │   ├── en.json                         # Tradução em Inglês
-│   └── es.json                         # Tradução em Espanhol
+│   ├── es.json                         # Tradução em Espanhol
+│   └── it.json                         # Tradução em Italiano
 ├── plugin/
 │   ├── blocks.php                      # Registro do bloco e scripts
 │   └── settings.php                    # Painel de configurações no admin WP

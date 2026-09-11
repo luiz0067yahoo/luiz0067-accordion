@@ -24,7 +24,7 @@ WordPress Gutenberg blocks for creating responsive Bootstrap 5 Retractable Menus
 * **Native Bootstrap 5.3**: Uses standard Bootstrap `.accordion`, `.accordion-item`, `.accordion-button` and collapse functionality.
 * **Isolated Block Instances**: Unique IDs for each item preventing any conflicts across blocks in the same post.
 * **Easy Item Management**: Add and remove items dynamically per column.
-* **Multilingual (i18n)**: Support for Português (Brasil), English and Español.
+* **Multilingual (i18n)**: Support for Português (Brasil), English, Español and Italiano.
 * **Zero External Dependencies**: Bundles Bootstrap 5.3 and Font Awesome 6 locally.
 
 == Installation ==
